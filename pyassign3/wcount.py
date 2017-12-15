@@ -19,6 +19,10 @@ def wcount(lines, topn=10):
     t=[]
     for i in string.punctuation+string.whitespace:
         lines=lines.split(i)
+        lines=" ".join(lines)
+    lines=lines.split(" ")
+    while "" in lines:
+        lines.remove("")
     for word in lines:
         if word in d:
             d[word]=d[word]+1
